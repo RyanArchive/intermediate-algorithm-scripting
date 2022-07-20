@@ -14,13 +14,12 @@
 function translatePigLatin(str) {
     let beginning = str.match(/^[^aeiou]*/)[0];
   
-    if (beginning === "") {
-        str += "way";
-    } else {
-        str = str.replace(beginning, "") + beginning + "ay";
-    }
-  
-    return str;
+    return beginning !== "" 
+        ? str
+            .replace(beginning, "")
+            .concat(beginning)
+            .concat("ay")
+        : str.concat("way");
 }
 
 translatePigLatin("consonant");
