@@ -8,13 +8,13 @@
 
 function binaryAgent(str) {
     const binaries = str.split(" ");
-    let translatedStr = "";
+    const translated = [];
 
     for (let i = 0; i < binaries.length; i++) {
-        translatedStr += String.fromCharCode(parseInt(binaries[i], 2));
+        translated.push(String.fromCharCode(parseInt(binaries[i], 2)));
     }
 
-    return translatedStr;
+    return translated.join("");
 }
 
 binaryAgent(
